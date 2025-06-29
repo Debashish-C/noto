@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const todoTypes = ["Daily", "Weekly", "Monthly", "Yearly"];
+const todoLevel = ["Most Important", "medium Important", "Less Important"];
 
 export default function Todo() {
   const [modal, setModal] = useState(false);
@@ -83,11 +84,13 @@ export default function Todo() {
 
   return (
     <div className="flex w-full pt-20 justify-center items-center">
-      <div className="max-w-3xl w-full flex flex-col justify-center items-start p-4">
+      <div className="max-w-5xl w-full flex flex-col justify-center items-start p-4">
         {/* Header */}
         <div className="w-full flex justify-between items-center">
           <h1 className="text-3xl font-bold">📝 TODO</h1>
-          <button
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
             onClick={() => {
               setModal(true);
               setTaskName("");
@@ -95,10 +98,10 @@ export default function Todo() {
               setEditId(null);
               setTaskType("Daily");
             }}
-            className="text-sm pl-5 pr-5 p-2 shadow-md hover:bg-amber-200 font-semibold bg-blue-100 rounded-2xl"
+            className="text-sm pl-5 pr-5 p-2 shadow-sm hover:shadow-md  border rounded-md"
           >
             + Add Todo
-          </button>
+          </motion.button>
         </div>
 
         {/* Tabs */}
@@ -217,6 +220,17 @@ export default function Todo() {
               className="p-2 rounded-md border text-sm"
             >
               {todoTypes.map((type) => (
+                <option key={type} value={type}>
+                  {type}
+                </option>
+              ))}
+            </select>
+            <select
+              value={taskType}
+              onChange={(e) => setTaskType(e.target.value)}
+              className="p-2 rounded-md border text-sm"
+            >
+              {todoLevel.map((type) => (
                 <option key={type} value={type}>
                   {type}
                 </option>

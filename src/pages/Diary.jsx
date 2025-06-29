@@ -1,5 +1,4 @@
 import React from "react";
-import Daily from "../components/Daily";
 import Entry from "../components/Entry";
 import Calendar from "../components/Calender";
 

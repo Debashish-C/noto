@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 export default function Navbar() {
   return (
-    <nav className="flex justify-between items-center p-4 pl-10 pr-10 fixed border-b-[0.3px] border-black w-full">
+    <nav className="flex justify-between items-center p-4 pl-10 pr-10 fixed border-b-[0.3px] border-black backdrop-blur-2xl w-full">
       <div className="">
         <h2 className="font-bold font-serif">NOTO</h2>
       </div>
@@ -12,9 +12,9 @@ export default function Navbar() {
           <Link to="/" className="hover:underline hover:text-amber-700">
             Tasks
           </Link>
-          <Link className="hover:underline hover:text-amber-700" to="/diary">
+          {/* <Link className="hover:underline hover:text-amber-700" to="/diary">
             Diary
-          </Link>
+          </Link> */}
           <Link className="hover:underline hover:text-amber-700" to="/planner">
             Schedule
           </Link>

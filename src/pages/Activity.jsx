@@ -1,5 +1,4 @@
 import React from "react";
-import Daily from "../components/Daily";
 
 export default function Activity() {
   return (
